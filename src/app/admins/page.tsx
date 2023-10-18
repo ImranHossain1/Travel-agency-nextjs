@@ -1,9 +1,11 @@
-import React from 'react'
+import { getServerSession } from "next-auth";
+import React from "react";
+import { authOptions } from "../lib/AuthOptions";
 
-const AllAdminsByAdmin = () => {
-  return (
-    <div>AllAdminsByAdmin</div>
-  )
-}
+const AllAdminsByAdmin = async () => {
+  const session = await getServerSession(authOptions);
 
-export default AllAdminsByAdmin
+  return <div>AllAdminsByAdmin</div>;
+};
+
+export default AllAdminsByAdmin;

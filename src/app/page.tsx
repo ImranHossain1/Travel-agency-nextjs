@@ -1,11 +1,14 @@
 import PublicHeader from "@/components/view/Header/PublicHeader/PublicHeader";
+import { getServerSession } from "next-auth";
+import { authOptions } from "./lib/AuthOptions";
 
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession(authOptions);
+  //console.log(session, "Hello session");
   return (
     <div>
       <PublicHeader />
       <div className="min-h-[calc(100vh-64px)]"> </div>
-
     </div>
   );
 }
