@@ -3,14 +3,16 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 // protected user can't view
-const hybridRoutes = ["/login", "/register"];
+const hybridRoutes = ["/", "/login", "/register"];
 
 // only travellers can view
 const travellerAccessibleRoutes = [
   "/",
   "/dashboard",
   "/my-profile",
-  "/my-booking",
+  "/my-pending-bookings",
+  "/my-bookings",
+
   "/my-pending-booking",
 ];
 
@@ -34,6 +36,7 @@ export async function middleware(request: NextRequest) {
     (role === "SUPERADMIN" && pathname.startsWith("/admins")) ||
     (role === "ADMIN" && pathname.startsWith("/admins")) ||
     (role === "DRIVER" && pathname.startsWith("/drivers")) ||
+    (role === "TRAVELLER" && pathname.startsWith("/my-bookings")) ||
     (role === "TRAVELLER" && travellerAccessibleRoutes.includes(pathname))
   ) {
     return NextResponse.next();

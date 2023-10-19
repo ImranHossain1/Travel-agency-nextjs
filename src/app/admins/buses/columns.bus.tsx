@@ -47,7 +47,6 @@ export const columns = [
     key: "action",
     render: (record: any) => {
       const items = getDropdownMenuItems(record.id);
-      //   console.log(record);
       return (
         <Dropdown
           placement="bottomLeft"

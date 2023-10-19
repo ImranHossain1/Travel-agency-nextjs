@@ -1,0 +1,26 @@
+"use server";
+
+import { getServerSession } from "next-auth";
+import { revalidateTag } from "next/cache";
+import { redirect } from "next/navigation";
+
+export const createBooking = async (data: any) => {
+  const session: any = await getServerSession(authOptions);
+
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/booking/create-booking`,
+    {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        Authorization: session.accessToken!,
+      },
+      cache: "no-cache",
+
+      body: JSON.stringify(requestData),
+    }
+  );
+  const { data: BusData } = await response.json();
+  revalidateTag("all-buses");
+  redirect(`/admins/doctors/`);
+};

@@ -8,6 +8,7 @@ export default function PublicLayout({
   return (
     <div>
       <PublicHeader />
+
       <div className="min-h-[calc(100vh-64px)]">{children}</div>
     </div>
   );

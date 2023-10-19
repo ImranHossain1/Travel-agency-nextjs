@@ -1,9 +1,8 @@
-import React from 'react'
+import Journies from "@/components/view/Components/Services/Services";
+import React from "react";
 
-const AvailableDoctorPublic = () => {
-  return (
-    <div>AvailableDoctorPublic</div>
-  )
-}
+const Journey = () => {
+  return <Journies></Journies>;
+};
 
-export default AvailableDoctorPublic
+export default Journey;

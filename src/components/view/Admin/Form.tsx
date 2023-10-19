@@ -17,7 +17,6 @@ const CreateBusForm: React.FC = () => {
 
   const [errorMessage, setErrorMessage] = useState<string>("");
   const onFinish = async (values: any) => {
-    //console.log(...values);
     setLoading(true);
     await createBus({
       totalSit: parseInt(values.totalSit),

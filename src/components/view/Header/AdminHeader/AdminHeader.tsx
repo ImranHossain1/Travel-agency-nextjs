@@ -9,7 +9,6 @@ const AdminHeader = async () => {
     { key: "3", label: "All Bookings", href: "/admins/all-bookings" },
   ];
   const session = await getServerSession(authOptions);
-  console.log(session);
   return (
     <>
       <Navbar session={session ? true : false} items={items} hasSider />

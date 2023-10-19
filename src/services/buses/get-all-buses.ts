@@ -15,7 +15,6 @@ export const getAllBuses = async (): Promise<Bus[]> => {
     },
   });
   const { data } = await buses.json();
-  //   console.log(data);
 
   if (buses.ok && data) {
     return data;

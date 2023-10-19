@@ -8,7 +8,6 @@ import { redirect } from "next/navigation";
 
 export const createBus = async (data: any) => {
   const session: any = await getServerSession(authOptions);
-  console.log(session, "Hello session");
   const buses = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/bus`, {
     method: "POST",
     body: JSON.stringify(data),

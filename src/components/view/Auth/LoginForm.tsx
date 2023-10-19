@@ -22,14 +22,11 @@ const LoginForm: React.FC = () => {
       email: values.email,
       password: values.password,
       redirect: false,
-      // callbackUrl: "/",
     });
-    //console.log(result);
     if (result?.ok && !result.error) {
       message.success("You have successfully signed in!");
 
       router.push("/");
-      // router.refresh();
     } else {
       setErrorMessage(
         "Invalid credentials. Please check your email and password."
@@ -38,9 +35,7 @@ const LoginForm: React.FC = () => {
     setLoading(false);
   };
 
-  const onFinishFailed = (errorInfo: any) => {
-    console.log("Failed:", errorInfo);
-  };
+  const onFinishFailed = (errorInfo: any) => {};
 
   return (
     <Form

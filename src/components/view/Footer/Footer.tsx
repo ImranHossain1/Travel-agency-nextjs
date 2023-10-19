@@ -17,21 +17,6 @@ const FooterComponent = () => {
             you with top-notch transportation services, making your journeys
             across Bangladesh seamless and enjoyable.
           </p>
-          <p>
-            Our mission is to connect people to their destinations with safety,
-            reliability, and affordability. Whether you are a frequent traveler
-            or planning a one-time trip, TravelBD.com is here to meet your
-            travel needs.
-          </p>
-          <p>
-            We take pride in our commitment to customer satisfaction and safety.
-            Our experienced drivers and well-maintained fleet of buses ensure a
-            smooth and secure travel experience.
-          </p>
-          <p>
-            Thank you for choosing TravelBD.com for your travel adventures. We
-            look forward to serving you on your next bus journey!
-          </p>
         </Col>
         <Col xs={24} sm={12} md={8} lg={6} xl={6}>
           <h2>Services</h2>
