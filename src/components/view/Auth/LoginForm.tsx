@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button, Form, Input } from "antd";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { message } from "antd";
 
 type FieldType = {
   email?: string;
@@ -12,9 +13,11 @@ type FieldType = {
 
 const LoginForm: React.FC = () => {
   const router = useRouter();
+  const [loading, setLoading] = useState(false); // Initialize loading state
+
   const [errorMessage, setErrorMessage] = useState<string>("");
   const onFinish = async (values: any) => {
-    //console.log("Success:", values);
+    setLoading(true);
     const result = await signIn("travel-agency-backend", {
       email: values.email,
       password: values.password,
@@ -23,14 +26,16 @@ const LoginForm: React.FC = () => {
     });
     //console.log(result);
     if (result?.ok && !result.error) {
+      message.success("You have successfully signed in!");
+
       router.push("/");
       // router.refresh();
     } else {
-      // If login fails, set the error message.
       setErrorMessage(
         "Invalid credentials. Please check your email and password."
       );
     }
+    setLoading(false);
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -64,7 +69,7 @@ const LoginForm: React.FC = () => {
       </Form.Item>
       {/* Display error message */}
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" htmlType="submit">
+        <Button type="primary" htmlType="submit" loading={loading}>
           Sign In
         </Button>
       </Form.Item>

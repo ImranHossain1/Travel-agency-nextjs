@@ -17,7 +17,7 @@ export const authOptions: AuthOptions = {
         // Add logic here to look up the user from the credentials supplied
         try {
           const res = await fetch(
-            `${process.env.NEXT_PUBLIC_API_URL}/api/v1/auth/signIn`,
+            `${process.env.NEXT_PUBLIC_API_URL}/auth/signIn`,
             {
               method: "POST",
               body: JSON.stringify(credentials),

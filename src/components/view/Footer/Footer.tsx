@@ -1,12 +1,72 @@
 "use client";
-import { Layout } from "antd";
+import { Layout, Row, Col } from "antd";
 
 const { Footer } = Layout;
 
 const FooterComponent = () => {
   return (
-    <Footer style={{ textAlign: "center" }}>
-      Doctors Portal &copy; {new Date().getFullYear()} Created by Programming Hero
+    <Footer
+      style={{ background: "#001529", color: "white", textAlign: "center" }}
+    >
+      <Row gutter={16}>
+        <Col xs={24} sm={12} md={8} lg={6} xl={6}>
+          <h2>About Us</h2>
+          <p>
+            Welcome to TravelBD.com - Your premier choice for convenient and
+            comfortable bus travel in Bangladesh. We are dedicated to providing
+            you with top-notch transportation services, making your journeys
+            across Bangladesh seamless and enjoyable.
+          </p>
+          <p>
+            Our mission is to connect people to their destinations with safety,
+            reliability, and affordability. Whether you are a frequent traveler
+            or planning a one-time trip, TravelBD.com is here to meet your
+            travel needs.
+          </p>
+          <p>
+            We take pride in our commitment to customer satisfaction and safety.
+            Our experienced drivers and well-maintained fleet of buses ensure a
+            smooth and secure travel experience.
+          </p>
+          <p>
+            Thank you for choosing TravelBD.com for your travel adventures. We
+            look forward to serving you on your next bus journey!
+          </p>
+        </Col>
+        <Col xs={24} sm={12} md={8} lg={6} xl={6}>
+          <h2>Services</h2>
+          <p>Service 1</p>
+          <p>Service 2</p>
+          <p>Service 3</p>
+        </Col>
+        <Col xs={24} sm={12} md={8} lg={6} xl={6}>
+          <h2>Contact Us</h2>
+          <p>
+            For inquiries, suggestions, or assistance, please do not hesitate to
+            get in touch with us. We value your feedback and are here to help
+            you with any questions you may have.
+          </p>
+          <p>
+            <strong>Name:</strong> Md Imran Hossain
+          </p>
+          <p>
+            <strong>Email:</strong>{" "}
+            <a href="mailto:imranhossain1402@gmail.com">
+              imranhossain1402@gmail.com
+            </a>
+          </p>
+        </Col>
+
+        <Col xs={24} sm={12} md={8} lg={6} xl={6}>
+          <h2>Follow Us</h2>
+          <p>Facebook</p>
+          <p>Twitter</p>
+          <p>Instagram</p>
+        </Col>
+      </Row>
+      <div style={{ padding: "20px 0" }}>
+        &copy; Md Imran Hossain. All rights reserved.
+      </div>
     </Footer>
   );
 };

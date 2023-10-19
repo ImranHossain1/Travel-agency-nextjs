@@ -1,8 +1,7 @@
-import { authOptions } from "@/app/lib/AuthOptions";
 import Navbar from "@/components/ui/Navbar/Navbar";
+import { authOptions } from "@/app/lib/AuthOptions";
 import { getServerSession } from "next-auth";
-
-const PublicHeader = async () => {
+const TravellerHeader = async () => {
   const items = [
     { key: "1", label: "Home", href: "/" },
     { key: "2", label: "Your Journeys", href: "/available-journies" },
@@ -17,4 +16,4 @@ const PublicHeader = async () => {
   );
 };
 
-export default PublicHeader;
+export default TravellerHeader;

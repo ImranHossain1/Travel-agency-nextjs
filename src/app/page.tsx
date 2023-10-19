@@ -4,7 +4,7 @@ import { authOptions } from "./lib/AuthOptions";
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
-  //console.log(session, "Hello session");
+  // console.log(session, "Hello session");
   return (
     <div>
       <PublicHeader />

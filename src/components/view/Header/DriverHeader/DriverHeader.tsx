@@ -2,14 +2,13 @@ import { authOptions } from "@/app/lib/AuthOptions";
 import Navbar from "@/components/ui/Navbar/Navbar";
 import { getServerSession } from "next-auth";
 
-const AdminHeader = async () => {
+const DriverHeader = async () => {
   const items = [
-    { key: "1", label: "Admins", href: "/admins" },
-    { key: "2", label: "My Profile", href: "/admins/my-profile" },
-    { key: "3", label: "All Bookings", href: "/admins/all-bookings" },
+    { key: "1", label: "Dashboard", href: "/Driver/my-profile" },
+    { key: "2", label: "My Profile", href: "/Driver/my-profile" },
+    { key: "3", label: "My Schedule", href: "/Driver/my-schedule" },
   ];
   const session = await getServerSession(authOptions);
-  console.log(session);
   return (
     <>
       <Navbar session={session ? true : false} items={items} hasSider />
@@ -17,4 +16,4 @@ const AdminHeader = async () => {
   );
 };
 
-export default AdminHeader;
+export default DriverHeader;

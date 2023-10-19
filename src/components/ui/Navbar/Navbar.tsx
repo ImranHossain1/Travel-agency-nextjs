@@ -23,6 +23,7 @@ const Navbar = ({
   const router = useRouter();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
   const showDrawer = () => {
     setOpen(true);
   };
@@ -57,7 +58,7 @@ const Navbar = ({
                 hasSider && "text-center lg:text-left"
               }`}
             >
-              Doctors Portal
+              Travel BD.com
             </Title>
           </Link>
         </Content>
@@ -75,23 +76,43 @@ const Navbar = ({
           ))}
 
           {session ? (
-            <Button
-              type="primary"
-              onClick={() => {
-                signOut();
-              }}
-            >
-              Sign out
-            </Button>
+            <>
+              <Link
+                href="/dashboard"
+                type="primary"
+                className="mr-2 text-gray-300"
+              >
+                Dashboard
+              </Link>
+              <Button
+                type="primary"
+                onClick={() => {
+                  signOut();
+                }}
+              >
+                Sign out
+              </Button>
+            </>
           ) : (
-            <Button
-              type="primary"
-              onClick={() => {
-                router.push("/login");
-              }}
-            >
-              Sign In
-            </Button>
+            <>
+              <Button
+                type="primary"
+                className="mr-2"
+                onClick={() => {
+                  router.push("/login");
+                }}
+              >
+                Sign In
+              </Button>
+              <Button
+                type="primary"
+                onClick={() => {
+                  router.push("/signup");
+                }}
+              >
+                Sign Up
+              </Button>
+            </>
           )}
         </Menu>
 
