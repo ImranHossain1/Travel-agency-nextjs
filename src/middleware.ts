@@ -9,7 +9,7 @@ const hybridRoutes = ["/", "/login", "/register"];
 const travellerAccessibleRoutes = [
   "/",
   "/dashboard",
-  "/my-profile",
+
   "/my-pending-bookings",
   "/my-bookings",
 
@@ -59,7 +59,7 @@ export const config = {
 
     //traveller routes
     "/dashboard",
-    "/my-profile",
+
     "/my-bookings",
     "/my-pending-bookings",
 

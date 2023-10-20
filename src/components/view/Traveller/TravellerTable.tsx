@@ -11,7 +11,7 @@ const TravellerTable = ({
 }) => {
   return (
     <>
-      <Title level={5}>{title}</Title>
+      <Title level={3}>{title}</Title>
       {children}
     </>
   );

@@ -1,15 +1,15 @@
 "use server";
 
 import { authOptions } from "@/app/lib/AuthOptions";
-import { Bus } from "@/interfaces/bus.interfaces";
+import { Booking } from "@/interfaces/booking.interface";
 import { PendingBooking } from "@/interfaces/pending.booking";
 import { getServerSession } from "next-auth";
 
-export const getAllPendingBookings = async (): Promise<PendingBooking[]> => {
+export const getAllUserBookings = async (): Promise<Booking[]> => {
   const session: any = await getServerSession(authOptions);
   const { accessToken } = session;
   const pendingBooking = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/booking/get-user-Pending-Booking`,
+    `${process.env.NEXT_PUBLIC_API_URL}/booking/get-all-bookings`,
     {
       headers: {
         "content-type": "application/json",
@@ -19,6 +19,7 @@ export const getAllPendingBookings = async (): Promise<PendingBooking[]> => {
     }
   );
   const { data } = await pendingBooking.json();
+
   if (pendingBooking.ok && data) {
     return data;
   } else {

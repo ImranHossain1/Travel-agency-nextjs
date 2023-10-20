@@ -1,5 +1,6 @@
 "use server";
 export const getJourney = async (availableJourneyId: string) => {
+  console.log(availableJourneyId);
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/bus-schedule/${availableJourneyId}`,

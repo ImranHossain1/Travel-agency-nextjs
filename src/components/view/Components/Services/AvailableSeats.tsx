@@ -20,6 +20,7 @@ const AvailableSeats: React.FC<AvailableSeatsProps> = ({
   availableSeats,
   busScheduleId,
 }) => {
+  console.log(availableSeats);
   const [selectedSeats, setSelectedSeats] = useState<string[]>([]);
 
   const handleAddSeat = () => {

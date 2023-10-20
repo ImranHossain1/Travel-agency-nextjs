@@ -6,7 +6,6 @@ const PatientSidebar = ({ children }: { children: React.ReactNode }) => {
     { key: "1", label: "Dashboard", href: "/dashboard" },
     { key: "2", label: "My Bookings", href: "/my-bookings" },
     { key: "3", label: "My Pending Bookings", href: "/my-pending-bookings" },
-    { key: "4", label: "My Profile", href: "/my-profile" },
   ];
   return <Sidebar items={items}>{children}</Sidebar>;
 };

@@ -1,9 +1,11 @@
-import React from 'react'
+import UserProfile from "@/components/view/User/UserProfile";
+import { getUser } from "@/services/users/users";
+import React from "react";
 
-const AdminDashboard = () => {
-  return (
-    <div>AdminDashboard</div>
-  )
-}
+const page = async () => {
+  const result: any = await getUser();
 
-export default AdminDashboard
+  return <UserProfile profileData={result}></UserProfile>;
+};
+
+export default page;

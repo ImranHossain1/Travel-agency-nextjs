@@ -1,9 +1,8 @@
-import React from 'react'
+import CreateBusScheduleForm from "@/components/view/Admin/BusScheduleForm";
+import React from "react";
 
-const CreateService = () => {
-  return (
-    <div>CreateService</div>
-  )
-}
+const CreateDoctorByAdmin = () => {
+  return <CreateBusScheduleForm></CreateBusScheduleForm>;
+};
 
-export default CreateService
+export default CreateDoctorByAdmin;
