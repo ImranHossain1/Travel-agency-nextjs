@@ -11,7 +11,6 @@ export default async function Home() {
       <PublicHeader />
       <Banner></Banner>
       <BookingProcess></BookingProcess>
-      <div className="min-h-[calc(100vh-64px)]"> </div>
     </div>
   );
 }
